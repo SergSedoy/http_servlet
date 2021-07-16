@@ -35,6 +35,6 @@ public class PostRepository {
     }
 
     public synchronized void removeById(long id) {
-        posts.remove(id);
+        posts.set(id, null);
     }
 }
