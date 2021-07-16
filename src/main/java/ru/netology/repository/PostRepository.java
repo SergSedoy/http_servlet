@@ -13,8 +13,8 @@ public class PostRepository {
         return posts;
     }
 
-    public Optional<Post> getById(long id) {
-        return Optional.empty();
+    public synchronized Optional<Post> getById(long id) {
+        return posts.get(id);
     }
 
     public synchronized Post save(Post post) {
@@ -35,5 +35,6 @@ public class PostRepository {
     }
 
     public synchronized void removeById(long id) {
+        posts.remove(id);
     }
 }
