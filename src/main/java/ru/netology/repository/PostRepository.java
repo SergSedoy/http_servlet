@@ -14,7 +14,7 @@ public class PostRepository {
     }
 
     public synchronized Optional<Post> getById(long id) {
-        return posts.get(id);
+        return Optional.of(posts.get((int)id));
     }
 
     public synchronized Post save(Post post) {
@@ -35,6 +35,6 @@ public class PostRepository {
     }
 
     public synchronized void removeById(long id) {
-        posts.set(id, null);
+        posts.set((int)id, null);
     }
 }

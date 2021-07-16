@@ -23,7 +23,7 @@ public class PostController {
         response.getWriter().print(gson.toJson(data));
     }
 
-    public void getById(long id, HttpServletResponse response) {
+    public void getById(long id, HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
         Post post = service.getById(id);
         final var gson = new Gson();
