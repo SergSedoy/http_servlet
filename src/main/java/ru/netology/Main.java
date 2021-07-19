@@ -1,11 +1,12 @@
 package ru.netology;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.netology.config.JavaConfig;
 
 public class Main {
 
     public static void main(String[] args) {
-        final var context = new AnnotationConfigApplicationContext("ru.netology");
+        final var context = new AnnotationConfigApplicationContext(JavaConfig.class);
 
         final var controller = context.getBean("postController");
 
