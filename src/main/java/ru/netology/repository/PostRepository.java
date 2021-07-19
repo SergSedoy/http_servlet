@@ -9,7 +9,7 @@ public class PostRepository {
     private static List<Post> posts = new ArrayList<>();
     private static long id;
 
-    public List<Post> all() {
+    public synchronized List<Post> all() {
         return posts;
     }
 
