@@ -5,9 +5,8 @@ import ru.netology.model.Post;
 
 import java.util.*;
 
-@Repository
 public class PostRepositoryStubImpl implements PostRepository {
-    private static List<Post> posts = new ArrayList<>();
+    private static List<Post> posts = List.of(new Post(789, "di-java"));
     private static long id;
 
     public synchronized List<Post> all() {
